@@ -7,7 +7,9 @@
     "prebuild": "rm -rf dist/*",
     "build": "tsc && cp -rf package.json dist/package.json",
     "prestart": "npm run build",
-    "start": "ts-node ."
+    "start": "ts-node .",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc"
   },
   "author": "",
   "license": "ISC",
