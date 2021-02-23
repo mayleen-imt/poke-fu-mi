@@ -1,5 +1,5 @@
 import {app} from './app'
-import * as db from './db';
+import * as db from './db'
 import {AddressInfo} from 'net'
 import dotenv from 'dotenv';
 // const waitPort = require('wait-port');
@@ -20,10 +20,9 @@ db
 });
 
 const gracefulShutdown = () => {
-  process.exit()
-  // db.teardown()
-  //     .catch(() => {})
-  //     .then(() => process.exit());
+  db.teardown()
+      .catch(() => {})
+      .then(() => process.exit());
 };
 
 process.on('SIGINT', gracefulShutdown);
