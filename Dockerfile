@@ -6,7 +6,8 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN npm install
+RUN npm run build
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "start" ]
 
-EXPOSE 5000
+EXPOSE $APP_PORT
